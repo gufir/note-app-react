@@ -53,15 +53,12 @@ class NotesApp extends React.Component {
     }
 
     onSearchHandler(query) {
-        console.log('Search query received:', query)
         this.setState({ querySearch: query || '' });
     }
 
     render() {
 
         const { notes, querySearch} = this.state;
-
-        console.log('Current querySearch:', querySearch);
 
         const filteredNotes = notes.filter(note => {
             const title = note.title.toLowerCase();
@@ -70,8 +67,6 @@ class NotesApp extends React.Component {
         
             return title.includes(query) || body.includes(query);
         });
-
-        console.log(filteredNotes)
 
         return (
             <div className="notes-app">
