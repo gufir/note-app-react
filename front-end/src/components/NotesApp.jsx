@@ -3,6 +3,7 @@ import NoteList from "./NoteList";
 import NoteSearch from "./NoteSearch.jsx";
 import { getInitialData } from "../utils/index.js";
 import NoteInput from "./NoteInput.jsx";
+import axios from "axios";
 
 
 class NotesApp extends React.Component {
