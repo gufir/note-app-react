@@ -26,7 +26,7 @@ class NotesApp extends React.Component {
 
     async fetchNotes() {
         try {
-            const response = await fetch("http://localhost:8000/notes");
+            const response = await fetch("http://192.168.1.5:8000/notes");
             const data = await response.json();
             this.setState({ notes: data });
         } catch (error) {
@@ -44,7 +44,7 @@ class NotesApp extends React.Component {
         }
 
         try {
-            const response = await fetch("http://localhost:8000/notes", {
+            const response = await fetch("http://192.168.1.5:8000/notes", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -81,7 +81,7 @@ class NotesApp extends React.Component {
     async onDeleteHandler(id) {
 
         try {
-            const response = await fetch(`http://localhost:8000/notes/${id}`, {
+            const response = await fetch(`http://192.168.1.5:8000/notes/${id}`, {
                 method: "DELETE"
             });
 
@@ -102,7 +102,7 @@ class NotesApp extends React.Component {
         try {
             const note = this.state.notes.find(note => note.id === id);
             console.log(note);
-            const response = await fetch(`http://localhost:8000/notes/${id}`, {
+            const response = await fetch(`http://192.168.1.5:8000/notes/${id}`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json"
@@ -128,7 +128,7 @@ class NotesApp extends React.Component {
     async onActiveHandler(id) {
         try {
             const note = this.state.notes.find(note => note.id === id);
-            const response = await fetch(`http://localhost:8000/notes/${id}`, {
+            const response = await fetch(`http://192.168.1.5:8000/notes/${id}`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json"
